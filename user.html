@@ -1,1 +1,9 @@
-Welcome user, thanks for clicking the previous link!
+<h2>Pick your favourite animal</h2>
+<div ng-controller="animal">
+  <button ng-click="dog()">Dog</button>
+  <button ng-click="cat()">Cat</button>
+  <button ng-click="rabbit()">Rabbit</button>
+  <button ng-click="lion()">Lion</button>
+
+  <p>You selected: {{favAnimal}}</p>
+</div>
