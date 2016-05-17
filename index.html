@@ -6,15 +6,21 @@
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     </head>
     <body>
-      <input type="text" ng-model="name">
-      <input type="text" ng-model="age">
-      <input type="text" ng-model="from">
-      <input type="text" ng-model="hobby">
-      <div>My name is {{name}}!</div>
-      <div>I am {{age}} years old</div>
-      <div>I live in {{from}}</div>
-      <div>My favourite hobby is {{hobby}}</div>
+      <h1>Give me your details</h1>
+      What is your name: <input type="text" ng-model="name"><br>
+      What is your age: <input type="text" ng-model="age"><br>
+      Where do you live: <input type="text" ng-model="from"><br>
+      What is your favourite hobby:<input type="text" ng-model="hobby"><br>
+      <div>{{name}}</div>
+      <div>{{age}}</div>
+      <div>{{from}}</div>
+      <div>{{hobby}}</div>
+
       <input type="text" ng-model="newName">
       <div ng-bind="newName"></div>
+      <div ng-init="language='AngularJS'">
+        What is your preferred language: <input type="text" ng-model="language">
+        {{language}}
+      </div>
     </body>
   </html>
