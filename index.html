@@ -22,5 +22,13 @@
         What is your preferred language: <input type="text" ng-model="language">
         {{language}}
       </div>
+
+      <h2>List of favourite languages</h2>
+      <div ng-init="myFavLan = [{name: 'Ruby', extension: '.rb'}, {name: 'Javascript', extension: '.js'}, {name: 'C++', extension: '.cpp'}, {name: 'Python', extension: '.py'},]">
+        <p ng-repeat="language in myFavLan">
+          <strong>Name:</strong> {{language.name}}<br>
+          <strong>Extension:</strong> {{language.extension}}<br>
+        </p>
+      </div>
     </body>
   </html>
