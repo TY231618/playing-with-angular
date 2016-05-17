@@ -3,10 +3,10 @@ var app = angular.module('myPractise', ['ngRoute']);
 app.config(function($routeProvider) {
   $routeProvider
   .when('/', {
-    template: "hello mate"
+    templateUrl: 'hello.html'
   })
-  .when('/another', {
-    template: 'What you doing here?'
+  .when('/helloUser', {
+    templateUrl: 'user.html'
   })
   .otherwise({
     redirectTo: '/'

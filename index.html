@@ -1,69 +1,15 @@
-<DOCTYPE html>
-  <html lang="en" ng-app="practiseApp">
-    <head>
-      <meta charset="UTF-8">
-      <title>Angular | Practise</title>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    </head>
-    <body>
-      <h1>Give me your details</h1>
-      What is your name: <input type="text" ng-model="name"><br>
-      What is your age: <input type="text" ng-model="age"><br>
-      Where do you live: <input type="text" ng-model="from"><br>
-      What is your favourite hobby:<input type="text" ng-model="hobby"><br>
-      <div>name = {{name}}</div>
-      <div>age = {{age}}</div>
-      <div>from = {{from}}</div>
-      <div>hobby = {{hobby}}</div>
+<!DOCTYPE html>
+<html lang="en" ng-app="myPractise">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular | Practise</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+  <script src="controller.js"></script>
+</head>
 
-      <input type="text" ng-model="newName">
-      <div ng-bind="newName"></div>
-      <div ng-init="language='AngularJS'">
-        What is your preferred language: <input type="text" ng-model="language">
-        {{language}}
-      </div>
+<body>
+  <div ng-view></div>
+</body>
 
-      <h2>List of favourite languages</h2>
-      <div ng-init="myFavLan = [{name: 'Ruby', extension: '.rb'}, {name: 'Javascript', extension: '.js'}, {name: 'C++', extension: '.cpp'}, {name: 'Python', extension: '.py'},]">
-        <p ng-repeat="language in myFavLan">
-          <strong>Name:</strong> {{language.name}}<br>
-          <strong>Extension:</strong> {{language.extension}}<br>
-        </p>
-      </div>
-      <h2>Pick your favourite animal</h2>
-      <div ng-controller="animal">
-        <button ng-click="dog()">Dog</button>
-        <button ng-click="cat()">Cat</button>
-        <button ng-click="rabbit()">Rabbit</button>
-        <button ng-click="lion()">Lion</button>
-
-        <p>You selected: {{favAnimal}}</p>
-      </div>
-      <input type="text" ng-model="upperName"><br>
-      Welcome {{ upperName | uppercase }}<br>
-      <input type="text" ng-model="price"><br>
-      Currency: {{ price | currency :'£':0 }}
-    </body>
-    <script>
-    var app = angular.module('practiseApp', []);
-    app.controller('animal', function($scope) {
-      $scope.favAnimal = 'None Selected';
-
-      $scope.dog = function() {
-        $scope.favAnimal = 'Dog';
-      }
-
-      $scope.cat = function() {
-        $scope.favAnimal = 'Cat';
-      }
-
-      $scope.rabbit = function() {
-        $scope.favAnimal = 'Rabbit';
-      }
-
-      $scope.lion = function() {
-        $scope.favAnimal = 'Lion';
-      }
-    })
-    </script>
-  </html>
+</html>
