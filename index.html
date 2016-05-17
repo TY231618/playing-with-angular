@@ -39,27 +39,31 @@
 
         <p>You selected: {{favAnimal}}</p>
       </div>
-      <script>
-        var app = angular.module('practiseApp', []);
-        app.controller('animal', function($scope) {
-          $scope.favAnimal = 'None Selected';
-
-          $scope.dog = function() {
-            $scope.favAnimal = 'Dog';
-          }
-
-          $scope.cat = function() {
-            $scope.favAnimal = 'Cat';
-          }
-
-          $scope.rabbit = function() {
-            $scope.favAnimal = 'Rabbit';
-          }
-
-          $scope.lion = function() {
-            $scope.favAnimal = 'Lion';
-          }
-        })
-      </script>
+      <input type="text" ng-model="upperName"><br>
+      Welcome {{ upperName | uppercase }}<br>
+      <input type="text" ng-model="price"><br>
+      Currency: {{ price | currency :'£':0 }}
     </body>
+    <script>
+    var app = angular.module('practiseApp', []);
+    app.controller('animal', function($scope) {
+      $scope.favAnimal = 'None Selected';
+
+      $scope.dog = function() {
+        $scope.favAnimal = 'Dog';
+      }
+
+      $scope.cat = function() {
+        $scope.favAnimal = 'Cat';
+      }
+
+      $scope.rabbit = function() {
+        $scope.favAnimal = 'Rabbit';
+      }
+
+      $scope.lion = function() {
+        $scope.favAnimal = 'Lion';
+      }
+    })
+    </script>
   </html>
