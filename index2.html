@@ -1,46 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myLanguages">
+<html lang="en" ng-app="myPractise">
 <head>
   <meta charset="UTF-8">
   <title>Angular | Practise</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+  <script src="controller.js"></script>
 </head>
 
 <body>
-  <div ng-controller="languages">
-    Pleade select your favourite language:<br>
-    <button ng-click="ruby()">Ruby</button><br>
-    <button ng-click="javascript()">Javascript</button><br>
-    <button ng-click="python()">Python</button><br>
-    <button ng-click="java()">Java</button><br>
-
-    <p>You have selected: {{myFavLan}}</p>
-  </div>
-
-  <script>
-
-    var app = angular.module('myLanguages', []);
-    app.controller('languages', function($scope) {
-      $scope.myFavLan = 'None';
-
-      $scope.ruby = function() {
-        $scope.myFavLan = 'Ruby';
-      }
-
-      $scope.javascript = function() {
-        $scope.myFavLan = 'Javascript';
-      }
-
-      $scope.python = function() {
-        $scope.myFavLan = 'Python';
-      }
-
-      $scope.java = function() {
-        $scope.myFavLan = 'Java';
-      }
-    });
-
-  </script>
+  <div ng-view></div>
 </body>
 
 </html>
