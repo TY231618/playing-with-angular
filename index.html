@@ -1,5 +1,5 @@
 <DOCTYPE html>
-  <html lang="en" ng-app="">
+  <html lang="en" ng-app="practiseApp">
     <head>
       <meta charset="UTF-8">
       <title>Angular | Practise</title>
@@ -30,5 +30,36 @@
           <strong>Extension:</strong> {{language.extension}}<br>
         </p>
       </div>
+      <h2>Pick your favourite animal</h2>
+      <div ng-controller="animal">
+        <button ng-click="dog()">Dog</button>
+        <button ng-click="cat()">Cat</button>
+        <button ng-click="rabbit()">Rabbit</button>
+        <button ng-click="lion()">Lion</button>
+
+        <p>You selected: {{favAnimal}}</p>
+      </div>
+      <script>
+        var app = angular.module('practiseApp', []);
+        app.controller('animal', function($scope) {
+          $scope.favAnimal = 'None Selected';
+
+          $scope.dog = function() {
+            $scope.favAnimal = 'Dog';
+          }
+
+          $scope.cat = function() {
+            $scope.favAnimal = 'Cat';
+          }
+
+          $scope.rabbit = function() {
+            $scope.favAnimal = 'Rabbit';
+          }
+
+          $scope.lion = function() {
+            $scope.favAnimal = 'Lion';
+          }
+        })
+      </script>
     </body>
   </html>
